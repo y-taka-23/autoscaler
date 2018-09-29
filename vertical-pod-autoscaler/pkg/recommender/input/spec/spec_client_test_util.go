@@ -66,13 +66,13 @@ spec:
     image: Name21Image
     resources:
       requests:
-        memory: "2048Mi"
+        memory: "1024Mi"
         cpu: "2000m"
   - name: Name22
     image: Name22Image
     resources:
       requests:
-        memory: "4096Mi"
+        memory: "1024Mi"
         cpu: "4000m"
 `
 
@@ -105,8 +105,8 @@ func newSpecClientTestCase() *specClientTestCase {
 
 	containerSpec11 := newTestContainerSpec(podID1, "Name11", 500, 512*1024*1024)
 	containerSpec12 := newTestContainerSpec(podID1, "Name12", 1000, 1024*1024*1024)
-	containerSpec21 := newTestContainerSpec(podID2, "Name21", 2000, 2048*1024*1024)
-	containerSpec22 := newTestContainerSpec(podID2, "Name22", 4000, 4096*1024*1024)
+	containerSpec21 := newTestContainerSpec(podID2, "Name21", 2000, 1024*1024*1024)
+	containerSpec22 := newTestContainerSpec(podID2, "Name22", 4000, 1024*1024*1024)
 
 	podSpec1 := newTestPodSpec(podID1, containerSpec11, containerSpec12)
 	podSpec2 := newTestPodSpec(podID2, containerSpec21, containerSpec22)

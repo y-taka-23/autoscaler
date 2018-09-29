@@ -19,7 +19,7 @@ spec:
       serviceAccountName: vpa-recommender
       containers:
       - name: recommender
-        image: k8s.gcr.io/vpa-recommender:0.2.0
+        image: ytaka23/vpa-recommender-armv7:0.2.0
         imagePullPolicy: Always
         resources:
           limits:

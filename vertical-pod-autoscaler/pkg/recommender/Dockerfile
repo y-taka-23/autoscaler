@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM k8s.gcr.io/debian-base-amd64:0.3.2
-MAINTAINER Krzysztof Grygiel "kgrygiel@google.com"
+FROM alpine:3.8
+LABEL maintainer "TAKAHASHI Yuto <ytaka23dev@gmail.com>"
 
 ADD recommender recommender
 
-CMD ./recommender --v=4 --stderrthreshold=info --prometheus-address=http://prometheus.monitoring.svc
+CMD ["./recommender", "--v=4", "--stderrthreshold=info", "--prometheus-address=http://prometheus.monitoring.svc"]

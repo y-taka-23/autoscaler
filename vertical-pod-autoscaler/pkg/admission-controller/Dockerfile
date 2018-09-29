@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM k8s.gcr.io/debian-base-amd64:0.3.2
-MAINTAINER Tomasz Kulczynski "tkulczynski@google.com"
+FROM alpine:3.8
+LABEL maintainer "TAKAHASHI Yuto <ytaka23dev@gmail.com>"
 
 ADD admission-controller admission-controller
 
-CMD ./admission-controller --v=4 --stderrthreshold=info
+CMD ["./admission-controller", "--v=4", "--stderrthreshold=info"]

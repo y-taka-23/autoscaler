@@ -12,10 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-FROM k8s.gcr.io/debian-base-amd64:0.3.2
-MAINTAINER Marcin Wielgus "mwielgus@google.com"
+FROM alpine:3.8
+LABEL maintainer "TAKAHASHI Yuto <ytaka23dev@gmail.com>"
 
 ADD updater updater
 
-CMD ./updater --v=4 --stderrthreshold=info
+CMD ["./updater", "--v=4", "--stderrthreshold=info"]
